@@ -23,17 +23,17 @@ spec:
         - secretRef:
             name: mongodb-secret
             optional: false  
-        # env:
-        # - name: MONGO_INITDB_ROOT_USERNAME
-        #   valueFrom:
-        #     secretKeyRef:
-        #       name: mongodb-secret
-        #       key: mongo-root-username
-        # - name: MONGO_INITDB_ROOT_PASSWORD
-        #   valueFrom: 
-        #     secretKeyRef:
-        #       name: mongodb-secret
-        #       key: mongo-root-password
+         env:
+         - name: MONGO_INITDB_ROOT_USERNAME
+           valueFrom:
+             secretKeyRef:
+               name: mongodb-secret
+               key: mongo-root-username
+         - name: MONGO_INITDB_ROOT_PASSWORD
+           valueFrom: 
+             secretKeyRef:
+               name: mongodb-secret
+               key: mongo-root-password
 ---
 apiVersion: v1
 kind: Service
